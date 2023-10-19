@@ -10,9 +10,13 @@ import datetime
 import redshift_connector
 import smtplib
 
+def load_dotenv_file():
+    dotenv_path = Path('credentials.env')
+    load_dotenv(dotenv_path=dotenv_path)
+
+
 def connect_to_database():
-  dotenv_path = Path('credentials.env')
-  load_dotenv(dotenv_path=dotenv_path)
+  load_dotenv_file()
 
   # DB Connection and tables creation
   host = os.getenv('HOST')
@@ -28,11 +32,6 @@ def connect_to_database():
       user=user,
       password=password
       )
-
-
-def load_dotenv_file():
-    dotenv_path = Path('credentials.env')
-    load_dotenv(dotenv_path=dotenv_path)
 
 
 def send_email():
