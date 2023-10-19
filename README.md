@@ -1,4 +1,4 @@
-GENERAL:
+#GENERAL:
 
 This script uses finnhub api to retrieve stock prices and load them into an Amazon Redshift database.
 API General documentation: https://finnhub.io/docs/api
@@ -8,14 +8,14 @@ Company info api documentation: https://finnhub.io/docs/api/company-profile2
 Stock prices api documentation: https://finnhub.io/docs/api/quote
 
 Libraries to install: 
--finnhub-python
--python-dotenv
--sqlalchemy
--pandas
--redshift_connector
+>finnhub-python
+>python-dotenv
+>sqlalchemy
+>pandas
+>redshift_connector
 
 
-RUNNING INSTRUCTIONS:
+#RUNNING INSTRUCTIONS:
 
 1) Clone this repo into local (docker must be installed).
 2) Modify ```credentials.env``` file. Define appropiate ```EMAIL_ADDRESS_FROM``` (email address from which an email will be sent with status of process), ```EMAIL_ADDRESS_TO``` (email address to which an email will be sent with status of process) and ```EMAIL_PASSWORD``` (password to login into ```EMAIL_ADDRESS_FROM```) variables. Must be Gmail account. Password has to be generated here: https://myaccount.google.com/apppasswords
